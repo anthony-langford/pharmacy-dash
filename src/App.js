@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import Card from './components/Card'
+import Dashboard from './Dashboard';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Card />
+        <Dashboard />
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;

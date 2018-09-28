@@ -7,17 +7,16 @@ import Button from './components/Dashboard/Button';
 import PatientCard from './components/Dashboard/PatientCard';
 import PatientInfo from './components/Dashboard/PatientInfo';
 
-const Wrapper = styled.div`
+const ContentWrapper = styled.div`
   display: flex;  
   margin: 24px;
-  height: 100%;
   border: 1px solid black;
 `;
 
 const PatientWrapper = styled.div`
   display: flex;
+  width: 320px;
   flex-direction: column;
-  height: 800px;
   border: 1px solid black;
 `;
 
@@ -65,12 +64,12 @@ export default class Dashboard extends React.Component {
       <React.Fragment>
         <Header />
         <Button>Back To Patient List</Button>
-        <Wrapper>
+        <ContentWrapper>
           <PatientWrapper>
-            <PatientCard patientName={this.state.patientInfo.name_line} />
+            <PatientCard patientName={this.state.patientInfo.mailing_address.name_line} />
             <PatientInfo patientInfo={this.state.patientInfo} />
           </PatientWrapper>
-        </Wrapper>
+        </ContentWrapper>
       </React.Fragment>
     );
   };

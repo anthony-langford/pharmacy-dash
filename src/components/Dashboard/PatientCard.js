@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 const PatientCard = styled.div`
   display: flex;
-  height: 100px;
-  width: 270px;
   border: 1px solid black;
   padding: 16px;
   align-items: center;

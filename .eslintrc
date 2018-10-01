@@ -1,0 +1,30 @@
+{
+  "extends": "react-app",
+  "plugins": ["react"],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-const-assign": "warn",
+    "no-this-before-super": "warn",
+    "no-undef": "warn",
+    "no-unreachable": "warn",
+    "no-unused-vars": "warn",
+    "constructor-super": "warn",
+    "valid-typeof": "warn",
+    "no-extra-semi":"error",
+    "indent": ["error", 2],
+    "comma-dangle": ["error", "only-multiline"],
+    "quotes": ["warn", "single"]
+  }
+}

@@ -56,7 +56,7 @@ export default class Dashboard extends React.Component {
         health_card: '3842953475'
       }
     };
-  };
+  }
 
   render() {
 
@@ -72,5 +72,5 @@ export default class Dashboard extends React.Component {
         </ContentWrapper>
       </React.Fragment>
     );
-  };
-};
+  }
+}

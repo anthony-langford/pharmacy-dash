@@ -14,7 +14,9 @@ const PatientName = styled.span`
   font-size: 20px;
 `;
 
-export default ({ patientName }) => {
+export default ({
+  patientName
+}) => {
   return (
     <PatientCard>
       <img src="https://via.placeholder.com/80x80" alt={'PatientImage'} />

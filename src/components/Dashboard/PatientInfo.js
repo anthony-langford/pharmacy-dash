@@ -108,12 +108,12 @@ export default ({ patientInfo }) => {
         <ListItem style={{ 'flexDirection': 'column' }} >
           <p style={{ 'margin': '0 0 8px' }} >{copy.secondary_insurance_card}</p>
           <InsuranceCardWrapper>
-          <div style={{ 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center' }} >
+            <div style={{ 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center' }} >
               <img src='https://via.placeholder.com/130x80' alt={'Secondary Insurance Card Front'} />
               <span>Front</span>
             </div>
             <div style={{ 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center' }} >
-            <img src='https://via.placeholder.com/130x80' alt={'Secondary Insurance Card Back'} />
+              <img src='https://via.placeholder.com/130x80' alt={'Secondary Insurance Card Back'} />
               <span>Back</span>
             </div>
           </InsuranceCardWrapper>

@@ -16,7 +16,7 @@ const Logo = styled.div`
   align-items: center;
 `;
 
-export default () => {
+export default function Header() {
   return (
     <Wrapper>
       <Logo>
@@ -24,4 +24,4 @@ export default () => {
       </Logo>
     </Wrapper>
   );
-};
+}

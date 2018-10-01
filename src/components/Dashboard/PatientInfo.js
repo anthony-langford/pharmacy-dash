@@ -100,7 +100,7 @@ export default ({ patientInfo }) => {
               <span>Front</span>
             </div>
             <div style={{ 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center' }} >
-            <img src='https://via.placeholder.com/130x80' alt={'Primary Insurance Card Back'} />
+              <img src='https://via.placeholder.com/130x80' alt={'Primary Insurance Card Back'} />
               <span>Back</span>
             </div>
           </InsuranceCardWrapper>

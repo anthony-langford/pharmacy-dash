@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // Import components
 import Header from './components/Dashboard/Header';
-import Button from './components/Dashboard/Button';
+import BackButton from './components/Dashboard/BackButton';
 import PatientCard from './components/Dashboard/PatientCard';
 import PatientInfo from './components/Dashboard/PatientInfo';
 
@@ -18,6 +18,14 @@ const PatientWrapper = styled.div`
   width: 320px;
   flex-direction: column;
   border: 1px solid black;
+`;
+
+const BackButtonArrow = styled.img`
+  margin: 0 8px 0 0;
+`;
+
+const BackButtonText = styled.span`
+  color: #54B1B7;
 `;
 
 export default class Dashboard extends React.Component {
@@ -59,11 +67,17 @@ export default class Dashboard extends React.Component {
   }
 
   render() {
+    const lastPage = 'Patient List' // Will be dynamic from react-router history
 
     return (
       <React.Fragment>
         <Header />
-        <Button>Back To Patient List</Button>
+        <BackButton height={'36px'} >
+          <BackButtonArrow src='arrow.png' alt='Arrow' />
+          <BackButtonText>
+            {`Back to ${lastPage}`}
+          </BackButtonText>
+        </BackButton>
         <ContentWrapper>
           <PatientWrapper>
             <PatientCard patientName={this.state.patientInfo.mailing_address.name_line} />

@@ -1,27 +1,68 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  height: 50px;
-  border-bottom: 2px solid darkblue;
+const HeaderWrapper = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: auto;
+	justify-content: space-between;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.03);
 `;
 
-const Logo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// TODO: Change active styling
+const LogoButton = styled.button`
+  margin: 0 0 0 5%;
+  outline: none;
+  border: none;
+  
+  &:active {
+    box-shadow: inset 0 0 2px #333;
+  }
 `;
 
-export default function Header() {
+const Logo = styled.img``;
+
+// TODO: Change active styling
+const AdminImageButton = styled.button`
+  display: flex;
+  align-items: center;
+  margin: 0 5% 0 0;
+  outline: none;
+  border: none;
+
+  &:active {
+    box-shadow: inset 0 0 2px #333;
+  }
+`;
+
+const Chevron = styled.img`
+  margin: 0 0 0 8px;
+`;
+
+export default function Header({
+  adminImage = 'https://via.placeholder.com/64x64',
+}) {
+
+  const AdminImage = styled.div`
+    margin: 0 0 0 5%;
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(${adminImage});
+  `;
+
   return (
-    <Wrapper>
-      <Logo>
-        <img src="https://via.placeholder.com/182x44" alt={'Logo'} />
-      </Logo>
-    </Wrapper>
+    <HeaderWrapper>
+      <LogoButton>
+        <Logo src='logo.png' alt='Logo' />
+      </LogoButton>
+      <AdminImageButton>
+        <AdminImage />
+        <Chevron src='chevron.png' alt='Chevron' />
+      </AdminImageButton>
+    </HeaderWrapper>
   );
 }

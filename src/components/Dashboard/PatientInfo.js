@@ -5,7 +5,6 @@ const PatientInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  height: 100%;
   width: auto;
   margin-top: 16px;
   padding: 16px;

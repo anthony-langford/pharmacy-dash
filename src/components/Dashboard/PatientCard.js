@@ -5,21 +5,33 @@ const PatientCard = styled.div`
   display: flex;
   border: 1px solid black;
   padding: 16px;
-  align-items: center;
 `;
+
+const PatientImageWrapper = styled.div`
+  display: flex;
+  height: 58px;  
+  width: 58px;
+  overflow: hidden;
+`;
+
+const PatientImage = styled.img``;
 
 const PatientName = styled.span`
   margin: 0px 16px;
-  width: 100%;
+  flex-grow: 1;
   font-size: 20px;
+  align-self: center;
 `;
 
 export default ({
-  patientName
+  patientName,
+  patientPhoto = 'patient-photo.png'
 }) => {
   return (
     <PatientCard>
-      <img src="https://via.placeholder.com/80x80" alt={'PatientImage'} />
+      <PatientImageWrapper>
+        <PatientImage src={patientPhoto} alt={'Patient'} />
+      </PatientImageWrapper>
       <PatientName>
         {patientName}
       </PatientName>

@@ -6,15 +6,22 @@ const ButtonWrapper = styled.div`
   margin: 24px;
 `;
 
-const Button = styled.button`
-  height: 36px;
-  width: 170px;
-  border: 1px solid rgb(186, 186, 186);
-`;
-
 export default ({
+  height,
   children
 }) => {
+
+  // TODO: Change active styling
+  const Button = styled.button`
+    height: ${height};
+    border: none;
+    outline: none;
+
+    &:active {
+      box-shadow: inset 0 0 4px #333;
+    }
+  `;
+
   return (
     <ButtonWrapper>
       <Button>

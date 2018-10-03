@@ -41,7 +41,7 @@ const Chevron = styled.img`
 `;
 
 export default function Header({
-  adminImage = 'https://via.placeholder.com/64x64',
+  adminImage = 'doctor.jpg',
 }) {
 
   const AdminImage = styled.div`

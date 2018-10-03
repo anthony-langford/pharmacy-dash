@@ -8,14 +8,17 @@ const PatientInfo = styled.div`
   width: auto;
   margin-top: 16px;
   padding: 16px;
-  border: 1px solid black;
-  text-align: left;
+  border: 1px solid #DFE6EE;
+  border-radius: 4px;
+  background-color: #FFFFFF;
 `;
 
 const Header = styled.h1`
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   margin: 0;
+  opacity: .38;
+  color: #4A4A4A;
 `;
 
 const List = styled.ul`
@@ -27,19 +30,63 @@ const List = styled.ul`
 const ListItem = styled.li`
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
+  margin: 16px 0 0 0;
+  padding: 0 0 12px 0;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.5);
 `;
 
-const InsuranceCardWrapper = styled.div`
+const ListItemLabel = styled.span`
+  font-size: 16px;
+  font-weight: 600;
+  color: #4A4A4A;
+  margin: 0 8px 0 0;
+`;
+
+const ListItemValue = styled.span`
+  margin: 0 0 0 8px;
+  text-align: right;
+  font-size: 16px;
+  color: #313541;
+`;
+
+const InsuranceCardWrapper = styled.li`
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  justify-content: space-between;
+`;
+
+const InsuranceCardLabel = styled.span`
+  font-size: 16px;
+  font-weight: 600;
+  color: #4A4A4A;
+  margin: 0 0 8px 0;
+`;
+
+const InsuranceCardContent = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
+const InsuranceCardItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const InsuranceCardImage = styled.img``;
+
+const InsuranceCardNote = styled.span`
+  margin: 4px 0 0 0;
+`;
+
 // TODO: Write function to format fields so patientInfo can be iterated over
 
-export default ({ patientInfo }) => {
+export default ({
+  patientInfo
+}) => {
   const copy = {
-    credit_card: 'Credit Card #',
+    credit_card: 'Credit Card',
     mailing_address: 'Mailing Address',
     billing_address: 'Billing Address',
     birthdate: 'DOB',
@@ -56,67 +103,99 @@ export default ({ patientInfo }) => {
       <Header>Patient Info</Header>
       <List>
         <ListItem>
-          <span>{copy.credit_card}:</span>
-          <span>{patientInfo.credit_card}</span>
+          <ListItemLabel>
+            {copy.birthdate}:
+          </ListItemLabel>
+          <ListItemValue>
+            {new Date(patientInfo.birthdate).toLocaleDateString('en-US', dateOptions)}
+          </ListItemValue>
         </ListItem>
         <ListItem>
-          <span>{`${copy.mailing_address}:`}</span>
-          <span>
+          <ListItemLabel>
+            {copy.credit_card}:
+          </ListItemLabel>
+          <ListItemValue>
+            {patientInfo.credit_card}
+          </ListItemValue>
+        </ListItem>
+        <ListItem>
+          <ListItemLabel>
+            {`${copy.mailing_address}:`}
+          </ListItemLabel>
+          <ListItemValue>
             <address>
               {patientInfo.mailing_address.address}<br/>
               {`${patientInfo.mailing_address.locality}, ${patientInfo.mailing_address.administrative_area}`}<br/>
               {patientInfo.mailing_address.postal_code}<br/>
             </address>
-          </span>
+          </ListItemValue>
         </ListItem>
         <ListItem>
-          <span>{`${copy.billing_address}:`}</span>
-          <span>
+          <ListItemLabel>
+            {`${copy.billing_address}:`}
+          </ListItemLabel>
+          <ListItemValue>
             <address>
               {patientInfo.billing_address.address}<br/>
               {`${patientInfo.billing_address.locality}, ${patientInfo.billing_address.administrative_area}`}<br/>
               {patientInfo.billing_address.postal_code}<br/>
             </address>
-          </span>
+          </ListItemValue>
         </ListItem>
         <ListItem>
-          <span>{copy.birthdate}:</span>
-          <span>{new Date(patientInfo.birthdate).toLocaleDateString('en-US', dateOptions)}</span>
+          <ListItemLabel>
+            {copy.allergies}:
+          </ListItemLabel>
+          <ListItemValue>
+            {patientInfo.allergies.length > 0 ? patientInfo.allergies : 'None'}
+          </ListItemValue>
         </ListItem>
         <ListItem>
-          <span>{copy.allergies}:</span>
-          <span>{patientInfo.allergies.length > 0 ? patientInfo.allergies : 'None'}</span>
+          <ListItemLabel>
+            {copy.health_card}:
+          </ListItemLabel>
+          <ListItemValue>
+            {patientInfo.health_card}
+          </ListItemValue>
         </ListItem>
-        <ListItem>
-          <span>{copy.health_card}:</span>
-          <span>{patientInfo.health_card}</span>
-        </ListItem>
-        <ListItem style={{ 'flexDirection': 'column' }} >
-          <p style={{ 'margin': '0 0 8px' }} >{copy.primary_insurance_card}</p>
-          <InsuranceCardWrapper>
-            <div style={{ 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center' }} >
-              <img src='https://via.placeholder.com/130x80' alt={'Primary Insurance Card Front'} />
-              <span>Front</span>
-            </div>
-            <div style={{ 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center' }} >
-              <img src='https://via.placeholder.com/130x80' alt={'Primary Insurance Card Back'} />
-              <span>Back</span>
-            </div>
-          </InsuranceCardWrapper>
-        </ListItem>
-        <ListItem style={{ 'flexDirection': 'column' }} >
-          <p style={{ 'margin': '0 0 8px' }} >{copy.secondary_insurance_card}</p>
-          <InsuranceCardWrapper>
-            <div style={{ 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center' }} >
-              <img src='https://via.placeholder.com/130x80' alt={'Secondary Insurance Card Front'} />
-              <span>Front</span>
-            </div>
-            <div style={{ 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center' }} >
-              <img src='https://via.placeholder.com/130x80' alt={'Secondary Insurance Card Back'} />
-              <span>Back</span>
-            </div>
-          </InsuranceCardWrapper>
-        </ListItem>
+        <InsuranceCardWrapper>
+          <InsuranceCardLabel>
+            {copy.primary_insurance_card}
+          </InsuranceCardLabel>
+          <InsuranceCardContent>
+            <InsuranceCardItem>
+              <InsuranceCardImage src='https://via.placeholder.com/130x80' alt={'Primary Insurance Card Front'} />
+              <InsuranceCardNote>
+                Front
+              </InsuranceCardNote>
+            </InsuranceCardItem>
+            <InsuranceCardItem>
+              <InsuranceCardImage src='https://via.placeholder.com/130x80' alt={'Primary Insurance Card Back'} />
+              <InsuranceCardNote>
+                Back
+              </InsuranceCardNote>
+            </InsuranceCardItem>
+          </InsuranceCardContent>
+        </InsuranceCardWrapper>
+        <InsuranceCardWrapper>
+          <InsuranceCardLabel>
+            {copy.secondary_insurance_card}
+          </InsuranceCardLabel>
+          <InsuranceCardContent>
+            <InsuranceCardItem>
+              <InsuranceCardImage src='https://via.placeholder.com/130x80' alt={'Secondary Insurance Card Front'} />
+              <InsuranceCardNote>
+                Front
+              </InsuranceCardNote>
+            </InsuranceCardItem>
+            <InsuranceCardItem>
+              <InsuranceCardImage src='https://via.placeholder.com/130x80' alt={'Secondary Insurance Card Back'} />
+              <InsuranceCardNote>
+                Back
+              </InsuranceCardNote>
+            </InsuranceCardItem>
+          </InsuranceCardContent>
+        </InsuranceCardWrapper>
       </List>
     </PatientInfo>
   );

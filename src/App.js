@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import Dashboard from './Dashboard';
 
 const Root = styled.div`
-  text-align: center;
+  height: 100%;
+  background-color: #FAFBFC;
 `;
 
 export default class App extends Component {

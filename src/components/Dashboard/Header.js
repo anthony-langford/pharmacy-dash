@@ -3,14 +3,15 @@ import styled from 'styled-components';
 
 const HeaderWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
-	justify-content: space-between;
   background: #FFFFFF;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.03);
 `;
 
 // TODO: Change active styling
 const LogoButton = styled.button`
+  display: flex;
   margin: 0 0 0 5%;
   outline: none;
   border: none;
@@ -44,7 +45,6 @@ export default function Header({
 }) {
 
   const AdminImage = styled.div`
-    margin: 0 0 0 5%;
     height: 64px;
     width: 64px;
     border-radius: 50%;

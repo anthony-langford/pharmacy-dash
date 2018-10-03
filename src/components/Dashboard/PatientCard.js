@@ -3,8 +3,11 @@ import styled from 'styled-components';
 
 const PatientCard = styled.div`
   display: flex;
-  border: 1px solid black;
+  border: 1px solid #DFE6EE;
   padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  filter: drop-shadow(0px 2px 9px rgba(0, 0, 0, 0.03));
 `;
 
 const PatientImageWrapper = styled.div`
@@ -21,6 +24,7 @@ const PatientName = styled.span`
   flex-grow: 1;
   font-size: 20px;
   align-self: center;
+  text-align: center;
 `;
 
 export default ({

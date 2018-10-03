@@ -8,11 +8,11 @@
     "node": true
   },
   "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
     "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
       "jsx": true
-    },
-    "sourceType": "module"
+    }
   },
   "rules": {
     "no-const-assign": "warn",

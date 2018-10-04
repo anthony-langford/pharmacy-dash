@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // Import components
@@ -22,7 +22,7 @@ const PatientWrapper = styled.div`
   flex-direction: column;
 `;
 
-export default class Dashboard extends React.Component {
+export default class Dashboard extends Component {
   constructor(props) {
     super(props);
 

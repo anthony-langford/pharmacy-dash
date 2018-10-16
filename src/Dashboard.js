@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const ContentWrapper = styled.div`
@@ -21,7 +21,7 @@ const Fly = styled.img`
   width: 64px;
 `;
 
-export default class Dashboard extends Component {
+export default class Dashboard extends React.Component {
   constructor(props) {
     super(props);
 
